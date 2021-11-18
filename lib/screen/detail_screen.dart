@@ -23,30 +23,67 @@ class DetailScreen extends StatelessWidget {
               Text(fakeData.name),
               Text(fakeData.brand),
               Image.network(fakeData.profileUrl),
-              Text("${viewModel.count}"),
+              Text("${viewModel.up} : ${viewModel.down}"),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextButton(
-                      onPressed: () {
-                        viewModel.countUp();
-                      },
-                      child: const Text("Up")),
-                  TextButton(
-                      onPressed: () {
-                        viewModel.countDown();
-                      },
-                      child: const Text("Down")),
+                  viewModel.isPolled
+                      ? const DisableButton(
+                          text: "추천하셨네요",
+                        )
+                      : Row(
+                          children: [
+                            EnabledButton(
+                              text: "Yes",
+                              onPressed: viewModel.countUp,
+                            ),
+                            EnabledButton(
+                              text: "No",
+                              onPressed: viewModel.countDown,
+                            ),
+                          ],
+                        ),
                 ],
               ),
-              Text("오늘날짜넣은 다음에 아침 09시마다 초기화"),
-              Text("몇월몇일 맞음 틀림"),
-              Text("크림에서는 얼마고~"),
-              Text("지난 일주일동안 맞았는지 틀렸는지"),
-              Text("택스트필드"),
-              Text("댓글불러오기")
+              const Text("매일 00시에 초기화 됩니다"),
+              TextFormField(),
+              const Expanded(
+                child: Padding(
+                  padding: EdgeInsets.all(40.0),
+                  child: Text("댓글 영역"),
+                ),
+              )
             ],
           ),
         ));
+  }
+}
+
+class EnabledButton extends StatelessWidget {
+  final String text;
+  final void Function()? onPressed;
+
+  const EnabledButton({Key? key, required this.text, required this.onPressed})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(onPressed: onPressed, child: Text(text));
+  }
+}
+
+class DisableButton extends StatelessWidget {
+  final String text;
+
+  const DisableButton({Key? key, required this.text}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          primary: Colors.grey,
+        ),
+        onPressed: () {},
+        child: Text(text));
   }
 }

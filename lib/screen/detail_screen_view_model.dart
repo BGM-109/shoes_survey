@@ -1,39 +1,45 @@
 import 'package:flutter/foundation.dart';
 
 class DetailScreenViewModel with ChangeNotifier {
-  int _count = 0;
-  final bool _isPicked = false;
+  int _up = 0;
+  int _down = 0;
+  bool _isPolled = false;
 
+  int get up => _up;
 
-  int get count => _count;
-  bool get isPicked => _isPicked;
+  int get down => _down;
+
+  bool get isPolled => _isPolled;
+
+  void pollCompleted() {
+    _isPolled = true;
+  }
 
   void countUp() {
-    _count++;
+    _up++;
+    pollCompleted();
     notifyListeners();
   }
 
   void countDown() {
-    _count--;
+    _down++;
+    pollCompleted();
     notifyListeners();
   }
 
-  void countClear(){
+  void countClear() {
     //카운팅을 초기화한다.
+    _up = 0;
+    _down = 0;
+    _isPolled = false;
+    notifyListeners();
   }
 
-  void loadComments(){
+  void loadComments() {
     //댓글을 불러온다
   }
 
-  void showClock(){
-    //시간을보여준다? 미정 메모리 때문에
-  }
-
-  void getPrice(){
+  void getPrice() {
     //크림에서 스크랩해온다
   }
-
-
-
 }

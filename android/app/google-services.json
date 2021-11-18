@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "281417094681",
+    "project_id": "portfolio-project1-db94c",
+    "storage_bucket": "portfolio-project1-db94c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:281417094681:android:fa5521307890a5d037fc88",
+        "android_client_info": {
+          "package_name": "com.example.shoes_survey"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "281417094681-h61vl157ururr8c9o11ciu78a0kpcf4b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shoes_survey",
+            "certificate_hash": "6491fd7c1a6eabe161eb0d37df265a7706d8c921"
+          }
+        },
+        {
+          "client_id": "281417094681-b4asdn4i1813l98s8s5m2ot8i9neik64.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTK2kK-M04qsWs-7xIErgxgjZ78BiFS5A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "281417094681-b4asdn4i1813l98s8s5m2ot8i9neik64.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

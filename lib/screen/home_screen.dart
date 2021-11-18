@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:shoes_survey/screen/detail_screen.dart';
 import 'package:shoes_survey/shoes_data.dart';
 
+
+
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 

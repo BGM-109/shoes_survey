@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shoes_survey/screen/detail_screen_view_model.dart';
 import 'package:shoes_survey/screen/home_screen.dart';
+import 'package:shoes_survey/screen/index_screen.dart';
 import 'package:shoes_survey/screen/login_screen.dart';
 import 'package:shoes_survey/screen/login_screen_view_model.dart';
 
@@ -31,8 +32,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(),
-      initialRoute: LoginScreen.id,
-      home: const LoginScreen(),
+      home: const IndexScreen(),
     );
   }
 }
